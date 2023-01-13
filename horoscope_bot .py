@@ -105,11 +105,11 @@ class Bot_ans:              # вызывает генератор текста �
 
 
 if __name__ == "__main__":
-    neuro = Get_model(r'C:\Users\asus rog\Documents\parsinghoroscop\rnn\model')     # указываем путь до модели
+    neuro = Get_model('./model/')     # указываем путь до модели
     neuro.turn0n_and_train_torch()
     new_text = Gen_text()           # получаем генератор текста
 
-    tg_bot = Init_bot("5837522256:AAEuPRqL8Uhh_ADHFFNZxycFeUZfJUkUxQo")              # активируем бота с токеном полученным от BotFather
+    tg_bot = Init_bot("")              # активируем бота с токеном полученным от BotFather
     bkb = Bot_kb()                  # получаем класс-строитель клавиатуры
     reader = User_mess(tg_bot.dp)   
     reader.get_mess()               # получаем сообщение от пользователя
